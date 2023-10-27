@@ -1,13 +1,15 @@
-import openai
 from flask import Flask, request
 from flask_cors import cross_origin
+import openai
+
 
 app = Flask(__name__)
 
 @app.route("/ask", methods=["GET"])
 @cross_origin()
 def ask():
-    openai.api_key = "[YOUR_API_KEY_HERE]"
+
+    openai.api_key = "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"
     
     completions = openai.Completion.create(
         engine="text-davinci-003",
